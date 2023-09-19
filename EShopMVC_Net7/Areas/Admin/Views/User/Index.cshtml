@@ -1,0 +1,43 @@
+﻿@model IEnumerable<AppUser>
+
+<div class="row">
+    <div class="col-12">
+
+        @* link C# dung the a asp- *@
+        <a asp-action="Register" asp-controller="Account" asp-area="" class="btn btn-outline-info mt-5">
+            Đăng Kí Tài Khoản Customer
+        </a>
+        <a asp-action="Create"  class="btn btn-outline-danger mt-5">
+           Tạo tài khoản Admin
+        </a>
+      
+
+        <table class="table table-bordered table-hover mt-5">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tên Đăng Nhập</th>
+                    <th>Email</th>
+                    <th>Vai trò</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <th>@item.Username </th>
+                        <th>@item.Email </th>
+                        <th>@(item.Role == UserRole.ROLEADMIN ? "Admin" : "Customer")</th>
+                        <th>
+                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-secondary">Sửa</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" 
+                            onclick="return confirm('Xác nhận để xóa')">Xóa</a>
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <partial name="_Pager" model="Model" />
+    </div>
+</div>

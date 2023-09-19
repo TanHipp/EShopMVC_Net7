@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\EShopMVC_Net7.props" />
+</Project>
