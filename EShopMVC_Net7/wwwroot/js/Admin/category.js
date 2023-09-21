@@ -25,37 +25,46 @@
             });
             fetch("/Admin/Category/ListAll")
                 .then(x => x.json())
-            .then(json => {
-                this._list = json;
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    },
+                .then(json => {
+                    this._list = json;
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        },
+
 
         openModalAdd() {
-        this._modal.show();
-        this._modalSetting = {
-            tittle: "Them danh muc san pham",
-            url: "", //Bo sung sau
-            primaryButtontext: "Them moi",
-        }
+            this._modal.show();
+            this._modalSetting = {
+                tittle: "Thêm mới danh mục sản phẩm",
+                url: "", // Bổ sung sau
+                primaryButtonText: "Thêm mới",
+            }
+        },
 
-    },
+        closeModal() {
+            // Xóa dữ liệu trong biến _updinData = null
+            this._updinData.name = "";
+            this._updinData.slug = "";
+        },
+
 
         openModalUpdate() {
-        this._modal.show();
-        this._modalSetting = {
-            tittle: "Cap nhat danh muc san pham",
-            url: "",
-            primaryButtontext: "Cap nhat",
-        }
+            this._modal.show();
+            this._modalSetting = {
+                tittle: "Cập nhật danh mục sản phẩm",
+                url: "",
+                primaryButtontext: "Cập nhật",
+            }
 
-    },
+        },
+
+
 
         saveCategory() {
 
-    },
+        },
 
     }));
 });
