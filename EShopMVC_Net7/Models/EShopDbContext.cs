@@ -31,12 +31,38 @@ namespace EShopMVC_Net7.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            /*
+                  Fluent API
+             */
+
+            // Bảng AppCategogyes
             modelBuilder.Entity<AppCategory>()
                         .Property(c => c.Name)
                         .HasMaxLength(200);
             modelBuilder.Entity<AppCategory>()
                         .Property(c => c.Slug)
                         .HasMaxLength(200);
+
+            // Bảng Product
+            modelBuilder.Entity<AppProduct>()
+                        .Property(m => m.Name)
+                        .HasMaxLength(200);
+            modelBuilder.Entity<AppProduct>()
+                        .Property(m => m.Slug)
+                        .HasMaxLength(200);
+            modelBuilder.Entity<AppProduct>()
+                        .Property(m => m.CoverImg)
+                        .HasMaxLength(300);
+            modelBuilder.Entity<AppProduct>()
+                        .Property(m => m.Summary)
+                        .HasMaxLength(1000);
+            //Cấu hình khóa ngoại
+            modelBuilder.Entity<AppProduct>()
+                        .HasOne(m => m.Category) // Bảng Category
+                        .WithMany(m => m.Products) // Products
+                        .HasForeignKey(m => m.CategoryId);  // Khóa ngoại
+
+
         }
     }
 }

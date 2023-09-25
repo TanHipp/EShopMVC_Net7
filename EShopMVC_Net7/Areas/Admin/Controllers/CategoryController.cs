@@ -36,5 +36,50 @@ namespace EShopMVC_Net7.Areas.Admin.Controllers
             return data;
         }
 
+        // Đường dẫn đến trang Upsert => /Admin/Category/Upsert/1
+        public IActionResult Upsert(int? id, [FromBody] CategoryUpdinVM item)
+        {
+            if (id == null)
+            {
+                //Coppy dữ liệu từ view modal sang modal
+                var category = new AppCategory
+                {
+                    Name = item.Name,
+                    Slug = item.Slug,
+                };
+                _db.Add(category);
+                _db.SaveChanges();
+                return Ok($"Thêm danh mục [{item.Name}] thành công");
+            }
+            else
+            {    //Update du lieu 
+                var oldCategory = _db.Find<AppCategory>(id);
+                if (oldCategory != null)
+                {
+                    oldCategory.Name = item.Name;
+                    oldCategory.Slug = item.Slug;
+
+                    _db.SaveChanges();
+                }
+                return Ok($"Cập nhật danh mục [{item.Name}] thành công");
+            }
+        }
+
+        public AppCategory Detail(int id)
+        {
+            return _db.AppCategorys.Find(id);
+        }
+
+        // Chức năng xóa
+        public IActionResult Delete(int id)
+        {
+            var data = _db.AppCategorys.Find(id);   // id trong Find(id) là khóa chính, ctr tự tìm
+            if (data != null)
+            {
+                _db.Remove(data);
+                _db.SaveChanges(true);
+            }
+            return Ok();
+        }
     }
 }
