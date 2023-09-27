@@ -193,12 +193,15 @@ namespace EShopMVC_Net7.Migrations
 
                     b.Property<string>("Path")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("AppProductImages");
                 });
@@ -264,9 +267,25 @@ namespace EShopMVC_Net7.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("EShopMVC_Net7.Models.AppProductImage", b =>
+                {
+                    b.HasOne("EShopMVC_Net7.Models.AppProduct", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("EShopMVC_Net7.Models.AppCategory", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("EShopMVC_Net7.Models.AppProduct", b =>
+                {
+                    b.Navigation("ProductImages");
                 });
 #pragma warning restore 612, 618
         }

@@ -61,7 +61,16 @@ namespace EShopMVC_Net7.Models
                         .HasOne(m => m.Category) // Bảng Category
                         .WithMany(m => m.Products) // Products
                         .HasForeignKey(m => m.CategoryId);  // Khóa ngoại
-
+            
+            // Bảng ProductImg
+            modelBuilder.Entity<AppProductImage>()
+                        .Property(m => m.Path)
+                        .HasMaxLength(300);
+            //Cấu hình khóa ngoại
+            modelBuilder.Entity<AppProductImage>()
+                        .HasOne(m => m.Product) // Bảng ProductImg
+                        .WithMany(m => m.ProductImages) // ProductImg
+                        .HasForeignKey(m => m.ProductId); //Khóa ngoại
 
         }
     }

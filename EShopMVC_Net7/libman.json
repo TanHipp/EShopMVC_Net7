@@ -17,6 +17,10 @@
     {
       "library": "bootstrap-icons@1.11.1",
       "destination": "wwwroot/lib/bootstrap-icons/"
+    },
+    {
+      "library": "summernote@0.8.20",
+      "destination": "wwwroot/lib/summernote/"
     }
   ]
 }
