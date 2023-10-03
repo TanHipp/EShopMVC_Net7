@@ -13,7 +13,7 @@ namespace EShopMVC_Net7.Areas.Admin.ViewModels.Product
         [MaxLength(150)]
         [Required]
         public string Slug { get; set; }
-        [MaxLength(500)]
+
         [Required]
         public IFormFile CoverImg { get; set; }
         [Range(0, long.MaxValue)]

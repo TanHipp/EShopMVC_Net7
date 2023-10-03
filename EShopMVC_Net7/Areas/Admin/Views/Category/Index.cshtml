@@ -18,7 +18,7 @@
 <div class="row" x-data="category">
     <div class="col-12 mt-5">
         <button class="btn btn-primary" x-on:click="openModalAdd"> 
-            Add new
+            Thêm mới
             <i class="bi bi-bag-plus-fill"></i>
         </button>
     </div>
@@ -44,10 +44,10 @@
                         <td x-text="i.name"></td>
                         <td>
                             <button class="btn btn-info" x-on:click="openModalUpdate(i.id)">
-                              Edit  <i class="bi bi-pen"></i>
+                              Sửa  <i class="bi bi-pen"></i>
                             </button>
                             <button class="btn btn-danger" x-on:click="RemoveCategory(i.id)">
-                                Delete <i class="bi bi-trash"></i>
+                                Xóa <i class="bi bi-trash"></i>
                             </button>
                         </td>
                         <td></td>
@@ -80,8 +80,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" x-on:click="closeModal()" data-bs-dismiss="modal">Close<i class="bi bi-x-lg"></i></button>
-                    <button type="button" class="btn btn-success" x-text="_modalSetting.primaryButtonText" x-on:click="saveCategory()">Add - Save<i class="bi bi-plus"></i></button>
+                    <button type="button" class="btn btn-secondary" x-on:click="closeModal()" data-bs-dismiss="modal">Đóng<i class="bi bi-x-lg"></i></button>
+                    <button type="button" class="btn btn-success" x-text="_modalSetting.primaryButtonText" x-on:click="saveCategory()"> Thêm  </button>
                 </div>
             </div>
         </div>
