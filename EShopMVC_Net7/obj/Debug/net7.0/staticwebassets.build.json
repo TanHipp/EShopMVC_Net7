@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Jf1+q7QuDPRbGOswIHroIM5mJddN1g191obHdABZBvE=",
+  "Hash": "/M3yhzI1cKRIJlMwmrCU5rPN2624XSiFEjWBJ7qikEA=",
   "Source": "EShopMVC_Net7",
   "BasePath": "_content/EShopMVC_Net7",
   "Mode": "Default",
@@ -40834,6 +40834,23 @@
       "OriginalItemSpec": "wwwroot\\lib\\summernote\\summernote-lite.min.js"
     },
     {
+      "Identity": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\Screen Shot 2023-10-03 at 20.22.28638320465356988737.png",
+      "SourceId": "EShopMVC_Net7",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\",
+      "BasePath": "_content/EShopMVC_Net7",
+      "RelativePath": "upload/Screen Shot 2023-10-03 at 20.22.28638320465356988737.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\Screen Shot 2023-10-03 at 20.22.28638320465356988737.png"
+    },
+    {
       "Identity": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638318803522967536.jpg",
       "SourceId": "EShopMVC_Net7",
       "SourceType": "Discovered",
@@ -41189,6 +41206,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638318826130831036.jpg"
+    },
+    {
+      "Identity": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638320465356971818.jpg",
+      "SourceId": "EShopMVC_Net7",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\",
+      "BasePath": "_content/EShopMVC_Net7",
+      "RelativePath": "upload/z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638320465356971818.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638320465356971818.jpg"
     }
   ]
 }

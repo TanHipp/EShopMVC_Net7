@@ -1,0 +1,78 @@
+﻿@using EShopMVC_Net7.Areas.Admin.ViewModels.Product
+@model IEnumerable<EShopMVC_Net7.Areas.Admin.ViewModels.Product.ProductListItemVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>IDEX Trang Chủ</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-bordered table-hover text-center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Hình ảnh</th>
+            <th>Tồn kho</th>
+            <th>Giá</th>
+            <th>Lượt xem</th>
+            <th>Danh Mục</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    <img src="@item.CoverImg" style="width:10%">
+                </td>
+                <td>@item.InStock</td>
+
+
+                <td>
+                    @{
+                        var isDiscount = false;
+                        if (item.DiscountPrice.HasValue)
+                        {
+                            var starDate = item.DiscountFrom ?? DateTime.MinValue;
+                            var endDate = item.DiscountTo ?? DateTime.MaxValue;
+                            isDiscount = starDate <= DateTime.Now && endDate >= DateTime.Now;
+
+                        }
+                    }
+                    @if (isDiscount)
+                    {
+                        <s>@item.Price?.ToString("#,# VND")</s>
+                        <span class="d-block">@item.DiscountPrice?.ToString("#,# VND")</span>
+
+                    }
+                    else
+                    {
+                        <span>@item.DiscountPrice?.ToString("#,# VND")</span>
+                    }
+
+
+                </td>
+
+
+                <td>@item.View</td>
+                <td>@item.CategoryName</td>
+
+                <td>
+
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>

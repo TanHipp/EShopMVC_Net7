@@ -2,6 +2,7 @@
 using EShopMVC_Net7.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using X.PagedList;
 
 namespace EShopMVC_Net7.Areas.Admin.Controllers
 {
@@ -12,9 +13,26 @@ namespace EShopMVC_Net7.Areas.Admin.Controllers
         public ProductController(EShopDbContext db) : base(db)
         {
         }
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            return View();
+            var products = _db.AppProducts
+                               .Select(p => new ProductListItemVM
+                               {
+                                   CategoryId = p.CategoryId,
+                                   CoverImg = p.CoverImg,
+                                   DiscountFrom = p.DiscountFrom,
+                                   DiscountPrice = p.DiscountPrice,
+                                   DiscountTo = p.DiscountTo,
+                                   Id = p.Id,
+                                   Name = p.Name,
+                                   Price = p.Price,
+                                   View = p.View,
+                                   CategoryName = p.Category.Name,
+                               })
+                               .OrderByDescending(p => p.Id)
+                               .ToPagedList(page, PER_PAGE);  // Phân trang sản phẩm
+
+            return View(products);
         }
 
         public IActionResult Create()
@@ -34,12 +52,12 @@ namespace EShopMVC_Net7.Areas.Admin.Controllers
 
         public IActionResult Create(ProductUpdinVM productVM, [FromServices] IWebHostEnvironment env)
         {
-            //Xac thuc du lieu
+            //Xác thục dữ liệu
             if (ModelState.IsValid == false)
             {
                 return View(productVM);
             }
-            // Sao chep tu wiewModal sang modal
+            // Sao chép từ wiewModal sang modal
             var product = new AppProduct
             {
                 Name = productVM.Name,
@@ -56,20 +74,47 @@ namespace EShopMVC_Net7.Areas.Admin.Controllers
                 CreatedAt = DateTime.Now,
             };
             // Upload anh bia (CoverImg)
-            var fName = productVM.CoverImg.FileName;
+            product.CoverImg = UploadFile(productVM.CoverImg, env.WebRootPath);
+
+            //Upload ảnh sản phẩm (Ảnh sản phẩm chi tiết)
+            foreach (var img in productVM.ProductImages)
+            {
+                if (img != null)
+                {
+                    // Tạo model cho ảnh sản phẩm và thêm vào cùng lúc với sản phẩm
+                    var productImg = new AppProductImage();
+                    productImg.Path = UploadFile(img, env.WebRootPath);
+                    product.ProductImages.Add(productImg);
+                }
+            }
+            try
+            {
+                _db.Add(product);
+                _db.SaveChanges();
+                SetSuccesMesg("Thêm sản phẩm thành công");
+            }
+            catch (Exception ex)
+            {
+                SetErrorMesg(ex.Message);
+                SetSuccesMesg("Đã lưu...!");
+            }
+            return RedirectToAction(nameof(Create));
+        }
+
+        private string UploadFile(IFormFile file, string dir)
+        {
+            var fName = file.FileName;
             fName = Path.GetFileNameWithoutExtension(fName)
                     + DateTime.Now.Ticks
                     + Path.GetExtension(fName);
-            product.CoverImg = "/upload/" + fName;
-            fName = Path.Combine(env.WebRootPath, "upload", fName);
-
+            var res = "/upload/" + fName;
+            //Đường dẫn tuyệt đối (Ví dụ E:/Project/wwwroot/upload/xxx.jpg)
+            fName = Path.Combine(dir, "upload", fName);
+            //Tạo tream để lưu file
             var stream = System.IO.File.Create(fName);
-            productVM.CoverImg.CopyTo(stream);
-            stream.Dispose();
-
-            _db.Add(product);
-            _db.SaveChanges();
-            return RedirectToAction(nameof(Create));
+            file.CopyTo(stream);
+            stream.Dispose();   // Giả phóng bộ nhớ
+            return res;
         }
     }
 }

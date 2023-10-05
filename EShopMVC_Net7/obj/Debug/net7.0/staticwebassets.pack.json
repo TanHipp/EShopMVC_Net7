@@ -9605,6 +9605,10 @@
       "PackagePath": "staticwebassets\\lib\\summernote\\summernote.min.js"
     },
     {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\Screen Shot 2023-10-03 at 20.22.28638320465356988737.png",
+      "PackagePath": "staticwebassets\\upload\\Screen Shot 2023-10-03 at 20.22.28638320465356988737.png"
+    },
+    {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638318803522967536.jpg",
       "PackagePath": "staticwebassets\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638318803522967536.jpg"
     },
@@ -9687,6 +9691,10 @@
     {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638318826130831036.jpg",
       "PackagePath": "staticwebassets\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638318826130831036.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638320465356971818.jpg",
+      "PackagePath": "staticwebassets\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638320465356971818.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.EShopMVC_Net7.Microsoft.AspNetCore.StaticWebAssets.props",
