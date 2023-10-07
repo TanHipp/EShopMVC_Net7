@@ -60,8 +60,9 @@ namespace EShopMVC_Net7.Models
             modelBuilder.Entity<AppProduct>()
                         .HasOne(m => m.Category) // Bảng Category
                         .WithMany(m => m.Products) // Products
-                        .HasForeignKey(m => m.CategoryId);  // Khóa ngoại
-            
+                        .HasForeignKey(m => m.CategoryId)  // Khóa ngoại
+                        .OnDelete(DeleteBehavior.NoAction); // => Xóa danh mục thì không xóa sản phẩm thuộc danh mục đó
+
             // Bảng ProductImg
             modelBuilder.Entity<AppProductImage>()
                         .Property(m => m.Path)
@@ -71,6 +72,8 @@ namespace EShopMVC_Net7.Models
                         .HasOne(m => m.Product) // Bảng ProductImg
                         .WithMany(m => m.ProductImages) // ProductImg
                         .HasForeignKey(m => m.ProductId); //Khóa ngoại
+                        
+                        
 
         }
     }

@@ -261,7 +261,7 @@ namespace EShopMVC_Net7.Migrations
                     b.HasOne("EShopMVC_Net7.Models.AppCategory", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Category");

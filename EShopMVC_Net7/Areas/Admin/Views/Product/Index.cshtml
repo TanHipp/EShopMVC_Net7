@@ -5,7 +5,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>IDEX Trang Chủ</h1>
+<h1>Trang Tạo Sản Phẩm</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -30,7 +30,8 @@
                 <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>
-                    <img src="@item.CoverImg" style="width:10%">
+                    <img src="@item.CoverImg" style="width: 50px; height: 50px; object-fit: cover"
+                         class="rounded rounded-circle shadow" />
                 </td>
                 <td>@item.InStock</td>
 
@@ -40,6 +41,7 @@
                         var isDiscount = false;
                         if (item.DiscountPrice.HasValue)
                         {
+                            //Đoạn code thực hiện GIẢM GIÁ sản phẩm
                             var starDate = item.DiscountFrom ?? DateTime.MinValue;
                             var endDate = item.DiscountTo ?? DateTime.MaxValue;
                             isDiscount = starDate <= DateTime.Now && endDate >= DateTime.Now;
@@ -66,9 +68,12 @@
 
                 <td>
 
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-primary"
+                       >Sửa</a>
+
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"
+                       onclick="return confirm('Xác nhận xóa...?')">Xóa</a>
+
                 </td>
 
 

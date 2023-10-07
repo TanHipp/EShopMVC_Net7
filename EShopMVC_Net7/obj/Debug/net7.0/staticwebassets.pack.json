@@ -9605,6 +9605,26 @@
       "PackagePath": "staticwebassets\\lib\\summernote\\summernote.min.js"
     },
     {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00360140638322243387541914.jpg",
+      "PackagePath": "staticwebassets\\upload\\00360140638322243387541914.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630147638322241602177529.jpg",
+      "PackagePath": "staticwebassets\\upload\\00630147638322241602177529.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630147638322241602187746.jpg",
+      "PackagePath": "staticwebassets\\upload\\00630147638322241602187746.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630147638322243387551618.jpg",
+      "PackagePath": "staticwebassets\\upload\\00630147638322243387551618.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870102638322209572898455.jpg",
+      "PackagePath": "staticwebassets\\upload\\01870102638322209572898455.jpg"
+    },
+    {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\Screen Shot 2023-10-03 at 20.22.28638320465356988737.png",
       "PackagePath": "staticwebassets\\upload\\Screen Shot 2023-10-03 at 20.22.28638320465356988737.png"
     },
@@ -9695,6 +9715,10 @@
     {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638320465356971818.jpg",
       "PackagePath": "staticwebassets\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638320465356971818.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638322209572879134.jpg",
+      "PackagePath": "staticwebassets\\upload\\z4735213589672_2e25860b1ec2cadec1a22e15dba73cd4638322209572879134.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.EShopMVC_Net7.Microsoft.AspNetCore.StaticWebAssets.props",

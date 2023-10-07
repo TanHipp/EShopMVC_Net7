@@ -112,12 +112,15 @@
 
         RemoveCategory(id) {
             var url = "/Admin/Category/Delete/" + id;
-            this._noti.confirm("Xác nhận xóa", async () => {
-                await fetch(url);
-
-
-
-                this._noti.success("Xóa thành công");
+            this._noti.confirm("Xác nhận xóa", () => {
+                fetch(url)
+                    .then(res => {
+                        if (res.status == 200) {
+                            this._noti.success("Xóa thành công...!");
+                        } else {
+                            this._noti.alert("Xóa sản phẩm thất bại");
+                        }
+                    });
                 this.refreshData();
             });
         }

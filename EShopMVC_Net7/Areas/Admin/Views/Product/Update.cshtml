@@ -1,0 +1,133 @@
+﻿@model EShopMVC_Net7.Areas.Admin.ViewModels.Product.ProductUpdinVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+@section head{
+    <link href="~/lib/summernote/summernote-lite.min.css" rel="stylesheet" />
+    <style>
+        .f-height 
+        {
+            min-height: 0px !important;
+            boder: 'none' !important;
+            height: 0 !important;
+            padding: 0 !important;  
+            width: 0 !important;
+        }
+    </style>
+}
+
+
+@section scripts {
+    <partial name="_Validation" />
+    <script src="~/lib/summernote/summernote-lite.min.js"></script>
+    <script>
+
+        $(() => 
+        {
+
+            $('form').each(function () {
+                if ($(this).data('validator'))
+                    $(this).data('validator').settings.ignore = ".note-editor *";
+            });
+
+            $('#Content').summernote({
+
+                height: '200px'
+            });
+            $('#Content').show();
+            $('#Content').addClass("f-height");
+
+        });
+    </script>
+}
+
+
+<h4>Trang Quản Lí Sản Phẩm</h4>
+<hr />
+<div class="row">
+    <div class="col-md-20">
+        <h1 class="display-4">Tạo sản phẩm</h1>
+        <form aps-action="Create" method="post" enctype="multipart/form-data">
+            @* Co dong enctype="multipart/form-data" nay moi uoload dyoc file *@
+            <div asp-validation-summary="ModelOnly" class="text-bg-danger"></div>
+
+
+            <div class="mt-3">
+                <label asp-for="CoverImg" class="control-label"></label>
+                <input asp-for="CoverImg" class="form-control" accept="image/*" />
+                <span asp-validation-for="CoverImg" class="text-danger"></span>
+            </div>
+
+            <div class="mt-3">
+                <label asp-for="ProductImages" class="control-label"></label>
+                <input asp-for="ProductImages" class="form-control" accept="image/*" />
+                <span asp-validation-for="ProductImages" class="text-danger"></span>
+            </div>
+
+
+            <div class="mt-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mt-3">
+                <label asp-for="Slug" class="control-label"></label>
+                <input asp-for="Slug" class="form-control" />
+                <span asp-validation-for="Slug" class="text-danger"></span>
+            </div>
+            <div class="mt-3">
+                <label asp-for="Summary" class="control-label"></label>
+                <textarea asp-for="Summary" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Summary" class="text-danger"></span>
+            </div>
+            <div class="mt-3">
+                <label asp-for="Content" class="control-label"></label>
+                <textarea asp-for="Content" class="form-control" rows="10"></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="mt-3">
+                <label asp-for="InStock" class="control-label"></label>
+                <input asp-for="InStock" class="form-control" />
+                <span asp-validation-for="InStock" class="text-danger"></span>
+            </div>
+            <div class="mt-3">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="mt-3">
+                <label asp-for="DiscountPrice" class="control-label"></label>
+                <input asp-for="DiscountPrice" class="form-control" />
+                <span asp-validation-for="DiscountPrice" class="text-danger"></span>
+            </div>
+            <div class="mt-3">
+                <label asp-for="DiscountFrom" class="control-label"></label>
+                <input asp-for="DiscountFrom" class="form-control" />
+                <span asp-validation-for="DiscountFrom" class="text-danger"></span>
+            </div>
+            <div class="mt-3">
+                <label asp-for="DiscountTo" class="control-label"></label>
+                <input asp-for="DiscountTo" class="form-control" />
+                <span asp-validation-for="DiscountTo" class="text-danger"></span>
+            </div>
+            <div class="mt-3">
+                <label asp-for="CategoryId" class="control-label"></label>
+      
+                <select asp-items="ViewBag.Category" asp-for="CategoryId" class="form-select">
+                    <option value="">Vui lòng chọn một danh mục</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+   
+            <div class="mt-3">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

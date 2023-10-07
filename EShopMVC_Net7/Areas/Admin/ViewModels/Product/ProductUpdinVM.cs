@@ -44,5 +44,9 @@ namespace EShopMVC_Net7.Areas.Admin.ViewModels.Product
 
         //  1 sản phẩm có nhiều hình ảnh 
         public IFormFileCollection ProductImages { get; set; }
+
+        public string? CoverImgPath { get; set; }  // Hiển thị ảnh ra khi Update
+
+        public List<string>? ProductImgPath { get; set; } = new();
     }
 }
