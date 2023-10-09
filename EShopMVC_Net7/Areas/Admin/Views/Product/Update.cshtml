@@ -47,21 +47,36 @@
 <hr />
 <div class="row">
     <div class="col-md-20">
-        <h1 class="display-4">Tạo sản phẩm</h1>
-        <form aps-action="Create" method="post" enctype="multipart/form-data">
+        <h1 class="display-4">Cập nhật sản phẩm</h1>
+        <form aps-action="Update" method="post" 
+                                  enctype="multipart/form-data">
+
             @* Co dong enctype="multipart/form-data" nay moi uoload dyoc file *@
             <div asp-validation-summary="ModelOnly" class="text-bg-danger"></div>
 
+            <div>
+                <img src="@Model.CoverImgPath" class="rounded" style="height: 100px; object-fit:cover; " />
+            </div>
+
 
             <div class="mt-3">
+
+                <div class="text-center">
+                    @foreach(var img in Model.ProductImgPath)
+                    {
+                        <img src="@img" class="rounded mx-1" style="height: 100px; object-fit:cover; " />
+                    }
+                </div>
+
+
                 <label asp-for="CoverImg" class="control-label"></label>
-                <input asp-for="CoverImg" class="form-control" accept="image/*" />
+                <input asp-for="CoverImg" class="form-control" accept="image/*" data-val="false"/>
                 <span asp-validation-for="CoverImg" class="text-danger"></span>
             </div>
 
             <div class="mt-3">
                 <label asp-for="ProductImages" class="control-label"></label>
-                <input asp-for="ProductImages" class="form-control" accept="image/*" />
+                <input asp-for="ProductImages" class="form-control" accept="image/*" data-val="false"/>
                 <span asp-validation-for="ProductImages" class="text-danger"></span>
             </div>
 
@@ -121,7 +136,7 @@
             </div>
    
             <div class="mt-3">
-                <input type="submit" value="Create" class="btn btn-success" />
+                <input type="submit" value="Cập nhật" class="btn btn-success" />
             </div>
         </form>
     </div>

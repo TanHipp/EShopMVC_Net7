@@ -34,8 +34,6 @@
                          class="rounded rounded-circle shadow" />
                 </td>
                 <td>@item.InStock</td>
-
-
                 <td>
                     @{
                         var isDiscount = false;
@@ -73,6 +71,7 @@
 
                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"
                        onclick="return confirm('Xác nhận xóa...?')">Xóa</a>
+
 
                 </td>
 

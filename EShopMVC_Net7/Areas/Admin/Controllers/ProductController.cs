@@ -3,6 +3,7 @@ using EShopMVC_Net7.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using X.PagedList;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace EShopMVC_Net7.Areas.Admin.Controllers
 {
@@ -47,6 +48,95 @@ namespace EShopMVC_Net7.Areas.Admin.Controllers
 
             return View();
         }
+
+        //Update sản phẩm
+        [HttpPost]
+        public IActionResult Update(int id, ProductUpdinVM productVM, [FromServices] IWebHostEnvironment env)
+        {
+            ModelState.Remove("CoverImg");
+            ModelState.Remove("ProductImages");
+
+            //xác thực dữ liệu
+            if (ModelState.IsValid == false)
+            {
+                return View(productVM);
+            }
+
+
+            var oldProduct = _db.AppProducts.Find(id);
+            if (oldProduct == null)
+            {
+                SetErrorMesg("Không tìm thấy sản phẩm");
+                return RedirectToAction(nameof(Index));
+
+            }
+
+            //coppy từ view model sang model
+            oldProduct.Name = productVM.Name;
+            oldProduct.Slug = productVM.Slug;
+            oldProduct.Content = productVM.Content;
+            oldProduct.Summary = productVM.Summary;
+            oldProduct.InStock = productVM.InStock;
+            oldProduct.Price = productVM.Price;
+            oldProduct.CategoryId = productVM.CategoryId;
+            oldProduct.DiscountPrice = productVM.DiscountPrice;
+            oldProduct.DiscountFrom = productVM.DiscountFrom;
+            oldProduct.DiscountTo = productVM.DiscountTo;
+
+            //Upload ảnh bìa (CoverImg)
+
+            if (productVM.CoverImg != null)
+            {
+                //Xoa anh bia cu
+                System.IO.File.Delete(env.WebRootPath + oldProduct.CoverImg);
+                oldProduct.CoverImg = UploadFile(productVM.CoverImg, env.WebRootPath);
+            }
+
+            if (productVM.ProductImages != null)
+            {
+                //Xóa ảnh trong database
+                var pImgs = _db.AppProductImages.Where(i => i.ProductId == id).ToList();
+                // Xoa file
+                foreach (var img in pImgs)
+                {
+                    //Xóa ảnh bia cũ
+                    System.IO.File.Delete(env.WebRootPath + img.Path);
+                }
+                _db.RemoveRange(pImgs);
+
+
+                //Upload ảnh sản phẩm (Ảnh sản phẩm chi tiết)
+                foreach (var img in productVM.ProductImages)
+                {
+                    if (img != null)
+                    {
+                        // Tạo model cho ảnh sản phẩm và thêm vào cùng lúc với sản phẩm
+
+                        var productImg = new AppProductImage();
+                        productImg.Path = UploadFile(img, env.WebRootPath);
+                        oldProduct.ProductImages.Add(productImg);
+                    }
+                }
+
+            }
+
+            try
+            {
+                _db.SaveChanges();
+                SetSuccesMesg("Cập nhật thông tin sản phẩm thành công");
+
+            }
+            catch (Exception ex)
+            {
+                SetErrorMesg("Đã xảy ra lỗi trong quá trình xử lí. Chi tiết: " + ex.Message);
+
+            }
+
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
 
 
 
