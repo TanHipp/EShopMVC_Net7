@@ -9605,264 +9605,56 @@
       "PackagePath": "staticwebassets\\lib\\summernote\\summernote.min.js"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00030064638324827837859322.jpg",
-      "PackagePath": "staticwebassets\\upload\\00030064638324827837859322.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00030064638324832182569020.jpg",
-      "PackagePath": "staticwebassets\\upload\\00030064638324832182569020.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00030080638324827837868352.jpg",
-      "PackagePath": "staticwebassets\\upload\\00030080638324827837868352.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00030080638324832182577650.jpg",
-      "PackagePath": "staticwebassets\\upload\\00030080638324832182577650.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00030082638324827837872567.jpg",
-      "PackagePath": "staticwebassets\\upload\\00030082638324827837872567.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00030082638324832182582804.jpg",
-      "PackagePath": "staticwebassets\\upload\\00030082638324832182582804.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00030087638324827837878491.jpg",
-      "PackagePath": "staticwebassets\\upload\\00030087638324827837878491.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00030087638324832182588911.jpg",
-      "PackagePath": "staticwebassets\\upload\\00030087638324832182588911.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00250100638324827837885980.jpg",
-      "PackagePath": "staticwebassets\\upload\\00250100638324827837885980.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00250100638324832182594030.jpg",
-      "PackagePath": "staticwebassets\\upload\\00250100638324832182594030.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00250185638324827837893710.jpg",
-      "PackagePath": "staticwebassets\\upload\\00250185638324827837893710.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00250185638324832182637158.jpg",
-      "PackagePath": "staticwebassets\\upload\\00250185638324832182637158.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00360140638324827837902080.jpg",
-      "PackagePath": "staticwebassets\\upload\\00360140638324827837902080.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00360140638324832182644052.jpg",
-      "PackagePath": "staticwebassets\\upload\\00360140638324832182644052.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00360156638324827837908965.jpg",
-      "PackagePath": "staticwebassets\\upload\\00360156638324827837908965.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00360156638324832182650244.jpg",
-      "PackagePath": "staticwebassets\\upload\\00360156638324832182650244.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00380091638324827837925618.jpg",
-      "PackagePath": "staticwebassets\\upload\\00380091638324827837925618.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00380091638324832182660151.jpg",
-      "PackagePath": "staticwebassets\\upload\\00380091638324832182660151.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630075638324815962358684.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630075638324815962358684.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630075638324827837932142.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630075638324827837932142.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630075638324832182665926.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630075638324832182665926.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630077638324827837937926.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630077638324827837937926.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630077638324832182672585.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630077638324832182672585.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630128638324827837950469.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630128638324827837950469.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630128638324832182680657.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630128638324832182680657.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630147638322241602187746.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630147638322241602187746.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00360132638338620929512769.jpg",
+      "PackagePath": "staticwebassets\\upload\\00360132638338620929512769.jpg"
     },
     {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630147638322243387551618.jpg",
       "PackagePath": "staticwebassets\\upload\\00630147638322243387551618.jpg"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630147638324827837960045.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630147638324827837960045.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00750042638338620929529480.jpg",
+      "PackagePath": "staticwebassets\\upload\\00750042638338620929529480.jpg"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630147638324831897448287.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630147638324831897448287.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00970031638338620929537519.jpg",
+      "PackagePath": "staticwebassets\\upload\\00970031638338620929537519.jpg"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630147638324832182692836.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630147638324832182692836.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00970049638338620929541863.jpg",
+      "PackagePath": "staticwebassets\\upload\\00970049638338620929541863.jpg"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630151638324827837967592.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630151638324827837967592.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630151638324831897465769.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630151638324831897465769.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630151638324832182702519.jpg",
-      "PackagePath": "staticwebassets\\upload\\00630151638324832182702519.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00650129638324827837972033.jpg",
-      "PackagePath": "staticwebassets\\upload\\00650129638324827837972033.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00650129638324831897474767.jpg",
-      "PackagePath": "staticwebassets\\upload\\00650129638324831897474767.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00650129638324832182708696.jpg",
-      "PackagePath": "staticwebassets\\upload\\00650129638324832182708696.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00650135638324827837980318.jpg",
-      "PackagePath": "staticwebassets\\upload\\00650135638324827837980318.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00650135638324831897485918.jpg",
-      "PackagePath": "staticwebassets\\upload\\00650135638324831897485918.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00650135638324832182717107.jpg",
-      "PackagePath": "staticwebassets\\upload\\00650135638324832182717107.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00650144638324827838000632.jpg",
-      "PackagePath": "staticwebassets\\upload\\00650144638324827838000632.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00650144638324831897531834.jpg",
-      "PackagePath": "staticwebassets\\upload\\00650144638324831897531834.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00650144638324832182727445.jpg",
-      "PackagePath": "staticwebassets\\upload\\00650144638324832182727445.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00750042638324827838014774.jpg",
-      "PackagePath": "staticwebassets\\upload\\00750042638324827838014774.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00750042638324831897542750.jpg",
-      "PackagePath": "staticwebassets\\upload\\00750042638324831897542750.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00750042638324832182735698.jpg",
-      "PackagePath": "staticwebassets\\upload\\00750042638324832182735698.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870095638324827838024583.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870095638324827838024583.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870095638324831897559751.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870095638324831897559751.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870095638324832182745921.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870095638324832182745921.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870100638324827838034385.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870100638324827838034385.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870100638324831897570600.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870100638324831897570600.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870100638324832182756153.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870100638324832182756153.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01280117638338620929547429.jpg",
+      "PackagePath": "staticwebassets\\upload\\01280117638338620929547429.jpg"
     },
     {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870102638322209572898455.jpg",
       "PackagePath": "staticwebassets\\upload\\01870102638322209572898455.jpg"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870102638324816757411628.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870102638324816757411628.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870102638324842595184020.jpg",
+      "PackagePath": "staticwebassets\\upload\\01870102638324842595184020.jpg"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870102638324827559532160.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870102638324827559532160.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870124638324842595191146.jpg",
+      "PackagePath": "staticwebassets\\upload\\01870124638324842595191146.jpg"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870102638324827838042437.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870102638324827838042437.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870124638324843158405482.jpg",
+      "PackagePath": "staticwebassets\\upload\\01870124638324843158405482.jpg"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870102638324831897578836.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870102638324831897578836.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870124638330869038585832.jpg",
+      "PackagePath": "staticwebassets\\upload\\01870124638330869038585832.jpg"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870102638324832182763753.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870102638324832182763753.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\Hinh-nen-Macbook-2021638324842595195985.jpg",
+      "PackagePath": "staticwebassets\\upload\\Hinh-nen-Macbook-2021638324842595195985.jpg"
     },
     {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870124638324827559550318.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870124638324827559550318.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870124638324827838050733.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870124638324827838050733.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870124638324831897586373.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870124638324831897586373.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870124638324832182774048.jpg",
-      "PackagePath": "staticwebassets\\upload\\01870124638324832182774048.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\Hinh-nen-Macbook-2021638324827559559181.jpg",
-      "PackagePath": "staticwebassets\\upload\\Hinh-nen-Macbook-2021638324827559559181.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\Hinh-nen-Macbook-2021638324827838057806.jpg",
-      "PackagePath": "staticwebassets\\upload\\Hinh-nen-Macbook-2021638324827838057806.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\Hinh-nen-Macbook-2021638324831897591395.jpg",
-      "PackagePath": "staticwebassets\\upload\\Hinh-nen-Macbook-2021638324831897591395.jpg"
-    },
-    {
-      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\Hinh-nen-Macbook-2021638324832182779723.jpg",
-      "PackagePath": "staticwebassets\\upload\\Hinh-nen-Macbook-2021638324832182779723.jpg"
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\Hinh-nen-Macbook-2021638324843158412733.jpg",
+      "PackagePath": "staticwebassets\\upload\\Hinh-nen-Macbook-2021638324843158412733.jpg"
     },
     {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\Screen Shot 2023-10-03 at 20.22.28638320465356988737.png",

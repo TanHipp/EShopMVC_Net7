@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AppCategory>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Trang Chủ</a>
+                </li>
+
+
+
+
+                @foreach (var item in Model)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-route-slug="@item.Slug" asp-route-cateId="@item.Id">@item.Name</a>
+                    </li>
+
+                }
+                @if (Context.GetUserId() == null)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Login" asp-controller="Account">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Register" asp-controller="Account">Đăng ký</a>
+                    </li>
+                }
+                else
+                {
+                    if (Context.IsAdmin())
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Index" asp-controller="Product"
+                               asp-area="Admin">Trang Quản Lý</a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark" asp-action="Logout" asp-controller="Account">Đăng xuất</a>
+                    </li>
+                }
+
+
+            </ul>
+            <div class="d-flex">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-action="Index" asp-controller="Cart">
+                            Giỏ hàng
+                            <i class="bi bi-cart3"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <form class="d-flex" role="search" asp-action="Search" asp-controller="Home" method="get">
+                    <input class="form-control me-2" type="search" name="keyword"
+                           placeholder="Search" type="search" aria-label="Search">
+                </form>
+
+            </div>
+        </div>
+    </div>
+</nav>

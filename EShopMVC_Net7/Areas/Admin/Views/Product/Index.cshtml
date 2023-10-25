@@ -54,7 +54,7 @@
                     }
                     else
                     {
-                        <span>@item.DiscountPrice?.ToString("#,# VND")</span>
+                        <span>@item.Price?.ToString("#,# VND")</span>
                     }
 
 
@@ -80,3 +80,4 @@
         }
     </tbody>
 </table>
+<partial name="_Pager" model="Model" />

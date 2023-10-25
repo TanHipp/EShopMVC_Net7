@@ -1,16 +1,68 @@
-﻿using EShopMVC_Net7.Common;
+﻿using EShopMVC_Net7.Areas.Admin.Controllers;
+using EShopMVC_Net7.Common;
 using EShopMVC_Net7.Models;
+using EShopMVC_Net7.ViewModels.Account;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EShopMVC_Net7.Controllers
 {
-	public class AccountController : Controller
+	public class AccountController : ClientBaseController
 	{
-		[HttpGet]
+		public AccountController(EShopDbContext db)	: base(db)
+		{
+		
+		}
+
+        // => Code logic xử lí đăng nhập tài khoản
+        [HttpGet]
+		public IActionResult Login() { 
+              return View();
+        } 
+		[HttpPost]
+		public IActionResult Login(LoginVM loginVM) { 
+			if(ModelState.IsValid == false)
+			{
+				ModelState.AddModelError("", "Dữ liệu không hợp lệ");
+				return View(loginVM);
+			}
+
+            var user = _db.AppUsers.SingleOrDefault(u => u.Username == loginVM.Username);
+
+            if (user == null)
+			{
+				ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không hợp lệ");
+                return View(loginVM);
+            }
+
+			if(BCrypt.Net.BCrypt.Verify(loginVM.Password, user.Password) == false)
+			{
+                ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không hợp lệ");
+                return View(loginVM);
+            }
+
+			HttpContext.SetUserId(user.Id);
+            HttpContext.SetUsername(user.Username);
+			HttpContext.SetRole(user.Role);
+
+            return RedirectToAction("Index","Home");//=> Đăng nhập xong chuyển về trang chủ
+		}
+
+        //=> Code logic xử lí đăng xuất tài khoản
+
+		public IActionResult Logout()
+		{
+			HttpContext.Session.Clear();
+			return RedirectToAction("Index", "Home");
+		}
+
+
+
+        // => Code logic xử lí đăng kí tài khoản
+        [HttpGet]
 		public IActionResult Register() => View();
 
 		[HttpPost]
-		public IActionResult Register(AppUser user, [FromServices] EShopDbContext db)
+		public IActionResult Register(AppUser user)
 		{
 			if (ModelState.IsValid == false)
 			{
@@ -29,7 +81,7 @@ namespace EShopMVC_Net7.Controllers
 
 
 			// Kiem tra username va email da ton tai trong database chua
-			var exists = db.AppUsers.Any(u => u.Email == user.Email || u.Username == user.Username);
+			var exists = _db.AppUsers.Any(u => u.Email == user.Email || u.Username == user.Username);
 
 			if (exists)
 			{
@@ -45,8 +97,8 @@ namespace EShopMVC_Net7.Controllers
 			user.Role = UserRole.ROLECUSTOMER;
 			user.BlockedTo = null;
 
-			db.AppUsers.Add(user);
-			db.SaveChanges();
+			_db.AppUsers.Add(user);
+			_db.SaveChanges();
 
 
 

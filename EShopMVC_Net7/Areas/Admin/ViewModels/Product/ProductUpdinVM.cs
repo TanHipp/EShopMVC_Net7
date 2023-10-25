@@ -16,7 +16,7 @@ namespace EShopMVC_Net7.Areas.Admin.ViewModels.Product
 
         [Required]
         public IFormFile CoverImg { get; set; }
-        [Range(0, long.MaxValue)]
+        [MaxLength(500)]
         [Required]                
         public string Summary { get; set; }
 

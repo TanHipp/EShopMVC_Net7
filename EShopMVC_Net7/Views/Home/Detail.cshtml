@@ -1,0 +1,47 @@
+﻿@model AppProduct
+
+<div class="row my-3">
+    <div class="col">
+        <h2 class="display-6">@Model.Name</h2>
+        <h4>
+
+            @{
+                var isDiscount = false;
+                if (Model.DiscountPrice.HasValue)
+                {
+                    //Đoạn code thực hiện GIẢM GIÁ sản phẩm
+                    var starDate = Model.DiscountFrom ?? DateTime.MinValue;
+                    var endDate = Model.DiscountTo ?? DateTime.MaxValue;
+                    isDiscount = starDate <= DateTime.Now && endDate >= DateTime.Now;
+
+                }
+            }
+            @if (isDiscount)
+            {
+                <s>@Model.Price?.ToString("#,#")</s>
+                <span>@Model.DiscountPrice?.ToString("#,# VND")</span>
+            }
+            else
+            {
+                <span>@Model.Price?.ToString("#,#")</span>
+            }
+
+
+        </h4>
+        <p>Thêm lúc @Model.CreatedAt?.ToString("dd/MM/yyy HH:mm")</p>
+        <!--Slide-->
+        <partial name="_Slide" model="Model.ProductImages"/>
+
+
+
+
+
+
+        <p class="fw-bold">@Model.Summary</p>
+        <h5 class="mt-4">Mô tả sản phẩm</h5>
+        <div>
+            @Html.Raw(Model.Content)
+        </div>
+
+    </div>
+</div>

@@ -16,24 +16,25 @@ namespace EShopMVC_Net7.Areas.Admin.Controllers
         }
         public IActionResult Index(int page = 1)
         {
-            var products = _db.AppProducts
-                               .Select(p => new ProductListItemVM
-                               {
-                                   CategoryId = p.CategoryId,
-                                   CoverImg = p.CoverImg,
-                                   InStock = p.InStock,
-                                   DiscountFrom = p.DiscountFrom,
-                                   DiscountPrice = p.DiscountPrice,
-                                   DiscountTo = p.DiscountTo,
-                                   Id = p.Id,
-                                   Name = p.Name,
-                                   Price = p.Price,
-                                   View = p.View,
-                                   CategoryName = p.Category.Name,
-                               })
-                               .OrderByDescending(p => p.Id)
-                               .ToPagedList(page, PER_PAGE);  // Phân trang sản phẩm
-            return View(products);
+                var products = _db.AppProducts
+                                   .Select(p => new ProductListItemVM
+                                   {
+                                       CategoryId = p.CategoryId,
+                                       CoverImg = p.CoverImg,
+                                       InStock = p.InStock,
+                                       Slug = p.Slug,   
+                                       DiscountFrom = p.DiscountFrom,
+                                       DiscountPrice = p.DiscountPrice,
+                                       DiscountTo = p.DiscountTo,
+                                       Id = p.Id,
+                                       Name = p.Name,
+                                       Price = p.Price,
+                                       View = p.View,
+                                       CategoryName = p.Category.Name,
+                                   })
+                                   .OrderByDescending(p => p.Id)
+                                   .ToPagedList(page, PER_PAGE);  // Phân trang sản phẩm
+                return View(products);
         }
 
         public IActionResult Create()

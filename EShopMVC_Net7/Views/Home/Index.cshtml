@@ -1,8 +1,76 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using EShopMVC_Net7.ViewModels.Home
+@model IEnumerable<ProductListItemVM>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@section head
+    {
+    <style>
+        .product-summary {
+            height: 100px;
+            overflow: hidden;
+            display: -webkit-box -webkit-inline-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+
+        .prodcut-name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+        }
+    </style>
+    }
+
+
+<div class="row mt-4">
+    <h6 class="text-center display-6">@ViewBag.Title</h6>
+    @foreach (var p in Model)
+    {
+        <div class="col-md-3 my-2">
+            <div class="card">
+                <a class="nav-link" asp-action="Detail" asp-route-id="@p.Id">
+                    <img src="@p.CoverImg" class="card-img-top" style="height:200px" ; object-fit="cover" ; alt="Hình ảnh sản phẩm">
+                </a>
+                <div class="card-body">
+                    <h6 class="card-title prodcut-name">
+                        <a class="nav-link" asp-action="Detail" asp-route-id="@p.Id">
+                            @p.Name
+                        </a>
+                    </h6>
+                    <small class="badge bg-info">@p.CategoryName</small>
+
+                    @{
+                        var isDiscount = false;
+                        if (p.DiscountPrice.HasValue)
+                        {
+                            //Đoạn code thực hiện GIẢM GIÁ sản phẩm
+                            var starDate = p.DiscountFrom ?? DateTime.MinValue;
+                            var endDate = p.DiscountTo ?? DateTime.MaxValue;
+                            isDiscount = starDate <= DateTime.Now && endDate >= DateTime.Now;
+
+                        }
+                    }
+                    <p class="card-text">
+                        @if (isDiscount)
+                        {
+                            <s class="badge bg-danger">@p.Price?.ToString("#,# VND")</s>
+                            <span class="badge bg-success">@p.DiscountPrice?.ToString("#,# VND")</span>
+
+                        }
+                        else
+                        {
+
+                            <span class="badge bg-success">@p.Price?.ToString("#,# VND")</span>
+
+                        }
+                    </p>
+
+                    <a asp-action="AddToCart"
+                       asp-controller="Cart"
+                       asp-route-productId="@p.Id" class="btn btn-success d-block my-3">Thêm vào giỏ hàng</a>
+
+                    <p class="card-text small product-summary">@p.Summary</p>
+                </div>
+            </div>
+        </div>
+    }
 </div>
+

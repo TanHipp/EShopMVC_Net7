@@ -1,0 +1,28 @@
+﻿@model IEnumerable<AppProductImage>
+
+<div id="carouselExampleAutoplaying" class="carousel slide my-3" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            var item = Model.ElementAt(i);
+            var _class = "";
+            if (i == 0)
+            {
+                _class = "active";
+            }
+            <div class="carousel-item @_class">
+                <img src="@item.Path" class="d-block w-100" alt="..." style="height:500px; object-fit:contain">
+            </div>  
+        }
+
+        
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-secondary rounded" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-secondary rounded" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
