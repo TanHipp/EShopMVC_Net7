@@ -45,6 +45,51 @@ namespace EShopMVC_Net7.Migrations
                     b.ToTable("AppCategorys");
                 });
 
+            modelBuilder.Entity("EShopMVC_Net7.Models.AppOrder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CustomerAddress")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("CustomerEmail")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("CustomerPhone")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int?>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppOrders");
+                });
+
             modelBuilder.Entity("EShopMVC_Net7.Models.AppOrderDetail", b =>
                 {
                     b.Property<int>("Id")
@@ -72,48 +117,9 @@ namespace EShopMVC_Net7.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("OrderId");
+
                     b.ToTable("AppOrderDetails");
-                });
-
-            modelBuilder.Entity("EShopMVC_Net7.Models.AppOrderProduct", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime?>("CreateAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CustomerAddress")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerEmail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CustomerName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CustomerPhone")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AppOrders");
                 });
 
             modelBuilder.Entity("EShopMVC_Net7.Models.AppProduct", b =>
@@ -256,6 +262,17 @@ namespace EShopMVC_Net7.Migrations
                     b.ToTable("AppUsers");
                 });
 
+            modelBuilder.Entity("EShopMVC_Net7.Models.AppOrderDetail", b =>
+                {
+                    b.HasOne("EShopMVC_Net7.Models.AppOrder", "AppOrder")
+                        .WithMany("Details")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppOrder");
+                });
+
             modelBuilder.Entity("EShopMVC_Net7.Models.AppProduct", b =>
                 {
                     b.HasOne("EShopMVC_Net7.Models.AppCategory", "Category")
@@ -281,6 +298,11 @@ namespace EShopMVC_Net7.Migrations
             modelBuilder.Entity("EShopMVC_Net7.Models.AppCategory", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("EShopMVC_Net7.Models.AppOrder", b =>
+                {
+                    b.Navigation("Details");
                 });
 
             modelBuilder.Entity("EShopMVC_Net7.Models.AppProduct", b =>

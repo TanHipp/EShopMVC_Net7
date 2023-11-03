@@ -11,7 +11,7 @@ namespace EShopMVC_Net7.Models
         public DbSet<AppOrderDetail> AppOrderDetails { get; set; }
         public DbSet<AppCategory> AppCategorys { get; set; }
         public DbSet<AppProductImage> AppProductImages { get; set; }
-        public DbSet<AppOrderProduct> AppOrders { get; set; }
+        public DbSet<AppOrder> AppOrders { get; set; }
 
 
         public EShopDbContext(DbContextOptions options) : base(options)
@@ -73,7 +73,27 @@ namespace EShopMVC_Net7.Models
                         .WithMany(m => m.ProductImages) // ProductImg
                         .HasForeignKey(m => m.ProductId); //Khóa ngoại
                         
-                        
+            //Bảng AppOders
+            modelBuilder.Entity<AppOrder>()
+                        .Property(m => m.CustomerAddress)
+                        .HasMaxLength (500);
+            modelBuilder.Entity<AppOrder>()
+                        .Property(m => m.CustomerPhone)
+                        .HasMaxLength(20);
+            modelBuilder.Entity<AppOrder>()
+                        .Property(m => m.CustomerName)
+                        .HasMaxLength(100);
+            modelBuilder.Entity<AppOrder>()
+                        .Property(m => m.CustomerEmail)
+                        .HasMaxLength(100);
+            //Cấu hình khóa ngoại bảng AppOrders
+            modelBuilder.Entity <AppOrder>()
+                        .HasMany(m => m.Details)
+                        .WithOne(m => m.AppOrder)
+                        .HasForeignKey(m => m.OrderId);
+
+
+
 
         }
     }

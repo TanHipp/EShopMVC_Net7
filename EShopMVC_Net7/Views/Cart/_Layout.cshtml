@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EShopMVC_Net7</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container">
+        <partial name="_Notify" /> @* Layout de hien thi cac thong bao *@
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>

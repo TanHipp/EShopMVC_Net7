@@ -9605,8 +9605,24 @@
       "PackagePath": "staticwebassets\\lib\\summernote\\summernote.min.js"
     },
     {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00030064638346391122228436.jpg",
+      "PackagePath": "staticwebassets\\upload\\00030064638346391122228436.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00030080638346391122234589.jpg",
+      "PackagePath": "staticwebassets\\upload\\00030080638346391122234589.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00360130638346386640832542.jpg",
+      "PackagePath": "staticwebassets\\upload\\00360130638346386640832542.jpg"
+    },
+    {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00360132638338620929512769.jpg",
       "PackagePath": "staticwebassets\\upload\\00360132638338620929512769.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630075638346390571416642.jpg",
+      "PackagePath": "staticwebassets\\upload\\00630075638346390571416642.jpg"
     },
     {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00630147638322243387551618.jpg",
@@ -9617,12 +9633,36 @@
       "PackagePath": "staticwebassets\\upload\\00750042638338620929529480.jpg"
     },
     {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00750042638346386640851279.jpg",
+      "PackagePath": "staticwebassets\\upload\\00750042638346386640851279.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00750042638346390571422821.jpg",
+      "PackagePath": "staticwebassets\\upload\\00750042638346390571422821.jpg"
+    },
+    {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00970031638338620929537519.jpg",
       "PackagePath": "staticwebassets\\upload\\00970031638338620929537519.jpg"
     },
     {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00970031638346386640860904.jpg",
+      "PackagePath": "staticwebassets\\upload\\00970031638346386640860904.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00970031638346390571432622.jpg",
+      "PackagePath": "staticwebassets\\upload\\00970031638346390571432622.jpg"
+    },
+    {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00970049638338620929541863.jpg",
       "PackagePath": "staticwebassets\\upload\\00970049638338620929541863.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00970049638346386640868491.jpg",
+      "PackagePath": "staticwebassets\\upload\\00970049638346386640868491.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\00970049638346390571439845.jpg",
+      "PackagePath": "staticwebassets\\upload\\00970049638346390571439845.jpg"
     },
     {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01280117638338620929547429.jpg",
@@ -9635,6 +9675,10 @@
     {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870102638324842595184020.jpg",
       "PackagePath": "staticwebassets\\upload\\01870102638324842595184020.jpg"
+    },
+    {
+      "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870102638346391122219955.jpg",
+      "PackagePath": "staticwebassets\\upload\\01870102638346391122219955.jpg"
     },
     {
       "Id": "D:\\EShopMVC_Net7\\EShopMVC_Net7\\wwwroot\\upload\\01870124638324842595191146.jpg",

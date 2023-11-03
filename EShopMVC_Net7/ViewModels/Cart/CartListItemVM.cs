@@ -8,7 +8,7 @@
 
         public string CoverImg { get; set; } // Ảnh danh sách đầu trang
 
-        public double? Price { get; set; }
+        public double Price { get; set; }
 
         public double? DiscountPrice { get; set; } // Giá khuyến mãi
 
@@ -42,7 +42,7 @@
         }
 
         // GIá cuối cùng
-        public double? FinalPrice
+        public double FinalPrice
         {
             get
             {

@@ -15,31 +15,27 @@ namespace EShopMVC_Net7.Controllers
         {
             var cartIds = HttpContext.Session.Keys
                                   .Where(c => c.StartsWith("Cart_"))
-                                  .Select(c => Convert.ToInt32 (c.Substring(5)))
+                                  .Select(c => Convert.ToInt32(c.Substring(5)))
                                   .ToList();
-            
-            if(cartIds != null )
+
+            if (cartIds != null)
             {
                 //Lấy thông tin sản phẩm từ Database lên !
                 var products = _db.AppProducts
-                                  .Where(p=>cartIds.Contains(p.Id))
-                                  .Select(p=> new CartListItemVM
-                                  { 
+                                  .Where(p => cartIds.Contains(p.Id))
+                                  .Select(p => new CartListItemVM
+                                  {
                                       Id = p.Id,
                                       Name = p.Name,
                                       CoverImg = p.CoverImg,
-                                      Price = p.Price,
+                                      Price = p.Price.Value,
                                       DiscountPrice = p.DiscountPrice,
                                       DiscountFrom = p.DiscountFrom,
-                                      DiscountTo = p.DiscountTo,    
+                                      DiscountTo = p.DiscountTo,
                                       QuantityInCart = HttpContext.Session.GetInt32("Cart_" + p.Id) ?? 0
                                   })
                                   .ToList();
-                                  return View(products);
-                
-
-
-
+                return View(products);
             }
 
             return View();
@@ -53,8 +49,16 @@ namespace EShopMVC_Net7.Controllers
             HttpContext.Session.SetInt32("Cart_" + productId, quantity + 1);
 
             var referer = HttpContext.Request.Headers["Referer"].ToString();
+            SetSuccesMesg("Sản phẩm đã được thêm vào giỏ hàng");
             return Redirect(referer);
 
+        }
+
+        public IActionResult RemoveProduct([FromQuery] int productId)
+        {
+            HttpContext.Session.Remove("Cart_" + productId);
+            SetErrorMesg("Sản phẩm đã được xóa khỏi giỏ hàng");
+            return RedirectToAction(nameof(Index));
         }
     }
 }

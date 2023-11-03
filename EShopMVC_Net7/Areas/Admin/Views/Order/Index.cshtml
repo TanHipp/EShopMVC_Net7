@@ -1,0 +1,43 @@
+﻿@model IEnumerable<EShopMVC_Net7.Models.AppOrder>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Trang Theo Dõi Đơn Hàng</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Tổng giá</th>
+            <th>Tên khách hàng</th>
+            <th>Số điện thoại</th>
+            <th>Email</th>
+            <th>Địa chỉ</th>
+            <th>T.Thái</th>
+            <th>Ngày tạo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.TotalPrice.ToString("#,#")</td>
+                <td>@item.CustomerName</td>
+                <td>@item.CustomerPhone</td>
+                <td>@item.CustomerEmail</td>
+                <td>@item.CustomerAddress</td>
+                <td>@item.Status</td>
+                <td>@item.CreateAt?.ToString("dd/MM/yy HH mm")</td>
+                <td>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

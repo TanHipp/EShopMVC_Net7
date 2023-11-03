@@ -1,0 +1,28 @@
+﻿@model EShopMVC_Net7.ViewModels.Cart.CustomerInforVM
+
+<form asp-action="Checkout" asp-controller="Checkout" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mt-3">
+        <label asp-for="CustomerName" class="control-label">Tên Khách Hàng</label>
+        <input asp-for="CustomerName" class="form-control" />
+        <span asp-validation-for="CustomerName" class="text-danger"></span>
+    </div>
+    <div class="mt-3">
+        <label asp-for="CustomerPhone" class="control-label">Số Điện Thoại</label>
+        <input asp-for="CustomerPhone" class="form-control" />
+        <span asp-validation-for="CustomerPhone" class="text-danger"></span>
+    </div>
+    <div class="mt-3">
+        <label asp-for="CustomerEmail" class="control-label">Email</label>
+        <input asp-for="CustomerEmail" class="form-control" />
+        <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+    </div>
+    <div class="mt-3">
+        <label asp-for="CustomerAddress" class="control-label">Địa Chỉ</label>
+        <input asp-for="CustomerAddress" class="form-control" />
+        <span asp-validation-for="CustomerAddress" class="text-danger"></span>
+    </div>
+    <div class="mt-3">
+        <input type="submit" value="ĐẶT HÀNG NGAY" class="btn btn-primary" />
+    </div>
+</form>
